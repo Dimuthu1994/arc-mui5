@@ -1,4 +1,4 @@
-import { Tab, Button } from "@mui/material";
+import { Tab, Button, Menu, MenuItem } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 //All variations
@@ -24,4 +24,21 @@ export const EstimateButton = styled(Button)(({ theme }) => ({
   marginLeft: "25px",
   marginRight: "25px",
   whiteSpace: "nowrap",
+}));
+
+export const MyMenu = styled(Menu)(({ theme }) => ({
+  "& .MuiMenu-paper": {
+    backgroundColor: theme.palette.primary.main,
+    color: "white",
+    borderRadius: "0px",
+  },
+}));
+
+export const MyMenuItem = styled(MenuItem)(({ theme }) => ({
+  ...theme.typography.tab,
+  opacity: 0.7,
+
+  "&:hover": {
+    opacity: 1,
+  },
 }));

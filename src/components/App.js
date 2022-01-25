@@ -22,17 +22,17 @@ function App() {
             <Route
               exact
               path="/customSoftware"
-              component={() => <div>Home</div>}
-            />
-            <Route
-              exact
-              path="/mobileapps"
               component={() => <div>Custom Software</div>}
             />
             <Route
               exact
-              path="/websites"
+              path="/mobileapps"
               component={() => <div>Mobile Apps</div>}
+            />
+            <Route
+              exact
+              path="/websites"
+              component={() => <div>Websites</div>}
             />
             <Route
               exact
