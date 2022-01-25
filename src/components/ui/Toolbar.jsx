@@ -12,6 +12,7 @@ import logo from "../../assets/logo.svg";
 
 function ToolbarHeader({ value, setValue, onChange }) {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const open = Boolean(anchorEl);
 
   const handleClick = (e) => {
@@ -20,6 +21,12 @@ function ToolbarHeader({ value, setValue, onChange }) {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  //menu item select
+  const handleMenuItemClick = (e, i) => {
+    setAnchorEl(null);
+    setSelectedIndex(i);
   };
 
   useEffect(() => {
@@ -37,6 +44,13 @@ function ToolbarHeader({ value, setValue, onChange }) {
       setValue(5);
     }
   }, [value]);
+
+  const menuOptions = [
+    { name: "Services", link: "/services" },
+    { name: "Custom Software Development", link: "/customSoftware" },
+    { name: "Mobile App Development", link: "/mobileapps" },
+    { name: "Website Development", link: "/websites" },
+  ];
 
   return (
     <Toolbar disableGutters>
@@ -79,39 +93,23 @@ function ToolbarHeader({ value, setValue, onChange }) {
         }}
         elevation={0}
       >
-        <MyMenuItem onClick={handleClose} component={Link} to="/services">
-          Services
-        </MyMenuItem>
-        <MyMenuItem
-          onClick={() => {
-            handleClose();
-            setValue(1);
-          }}
-          component={Link}
-          to="/customSoftware"
-        >
-          Custom Software Development
-        </MyMenuItem>
-        <MyMenuItem
-          onClick={() => {
-            handleClose();
-            setValue(1);
-          }}
-          component={Link}
-          to="/mobileapps"
-        >
-          Mobile App Development
-        </MyMenuItem>
-        <MyMenuItem
-          onClick={() => {
-            handleClose();
-            setValue(1);
-          }}
-          component={Link}
-          to="/websites"
-        >
-          Website Development
-        </MyMenuItem>
+        {menuOptions.map((option, i) => {
+          return (
+            <MyMenuItem
+              key={`${option}${i}`}
+              onClick={(e) => {
+                handleClose();
+                setValue(1);
+                handleMenuItemClick(e, i);
+              }}
+              component={Link}
+              to={option.link}
+              selected={i === selectedIndex && value === 1}
+            >
+              {option.name}
+            </MyMenuItem>
+          );
+        })}
       </MyMenu>
     </Toolbar>
   );

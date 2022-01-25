@@ -41,4 +41,8 @@ export const MyMenuItem = styled(MenuItem)(({ theme }) => ({
   "&:hover": {
     opacity: 1,
   },
+
+  "&.Mui-selected": {
+    backgroundColor: theme.palette.primary.dark,
+  },
 }));
