@@ -22,12 +22,22 @@ export const myTheme = createTheme({
       fontFamily: "Raleway",
       textTransform: "None",
       fontWeight: "700",
-      fontSize: "1rem",
+      fontSize: "0.8rem",
+    },
+    estimateButton: {
+      fontFamily: "Pacifico",
+      fontSize: "0.8rem",
+      textTransform: "none",
     },
   },
 
   tabContainer: {
     marginLeft: "auto",
+  },
+
+  footer: {
+    width: "100%",
+    backgroundColor: `${arcBlue}`,
   },
 });
 

@@ -1,8 +1,6 @@
-import React from "react";
-import { AppBar, Toolbar, useScrollTrigger, Tab, Tabs } from "@mui/material";
-
-import { MyLogo, MyTab } from "./Header.elements";
-import logo from "../../assets/logo.svg";
+import React, { useState } from "react";
+import { AppBar, useScrollTrigger } from "@mui/material";
+import ToolbarHeader from "./Toolbar";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -18,19 +16,19 @@ function ElevationScroll(props) {
 }
 
 function Header(props) {
+  const [value, setValue] = useState(0);
+  const handleChange = (e, value) => {
+    setValue(value);
+  };
+
   return (
     <ElevationScroll>
       <AppBar position="sticky">
-        <Toolbar disableGutters>
-          <MyLogo alt="company logo" src={logo} />
-          <Tabs sx={(theme) => ({ ...theme.tabContainer })}>
-            <MyTab label="Home" />
-            <MyTab label="Services" />
-            <MyTab label="The Revolution" />
-            <MyTab label="About Us" />
-            <MyTab label="Contact Us" />
-          </Tabs>
-        </Toolbar>
+        <ToolbarHeader
+          value={value}
+          setValue={setValue}
+          onChange={handleChange}
+        />
       </AppBar>
     </ElevationScroll>
   );
