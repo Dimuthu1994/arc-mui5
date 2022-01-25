@@ -1,61 +1,53 @@
-import React, { useState } from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
+import React from "react";
+import { Link } from "react-router-dom";
+import { MyMenu, MyMenuItem } from "./Header.elements";
 
-const options = [
-  "Show some love to MUI",
-  "Show all notification content",
-  "Hide sensitive notification content",
-  "Hide all notification content",
-];
+function ServicesMenu({
+  anchorEl,
+  open,
+  onClose,
+  setValue,
+  onMenuItemClick,
+  selectedIndex,
+  value,
+}) {
+  const menuOptions = [
+    { name: "Services", link: "/services" },
+    { name: "Custom Software Development", link: "/customSoftware" },
+    { name: "Mobile App Development", link: "/mobileapps" },
+    { name: "Website Development", link: "/websites" },
+  ];
 
-export default function ServicesMenu() {
   return (
-    <div>
-      <List
-        component="nav"
-        aria-label="Device settings"
-        sx={{ bgcolor: "background.paper" }}
-      >
-        <ListItem
-          button
-          id="lock-button"
-          aria-haspopup="listbox"
-          aria-controls="lock-menu"
-          aria-label="when device is locked"
-          aria-expanded={open ? "true" : undefined}
-          onClick={handleClickListItem}
-        >
-          <ListItemText
-            primary="When device is locked"
-            secondary={options[selectedIndex]}
-          />
-        </ListItem>
-      </List>
-      <Menu
-        id="lock-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "lock-button",
-          role: "listbox",
-        }}
-      >
-        {options.map((option, index) => (
-          <MenuItem
-            key={option}
-            disabled={index === 0}
-            selected={index === selectedIndex}
-            onClick={(event) => handleMenuItemClick(event, index)}
+    <MyMenu
+      id="simple-menu"
+      anchorEl={anchorEl}
+      open={open}
+      onClose={onClose}
+      MenuListProps={{
+        onMouseLeave: onClose,
+      }}
+      elevation={0}
+    >
+      {menuOptions.map((option, i) => {
+        return (
+          <MyMenuItem
+            key={`${option}${i}`}
+            onClick={(e) => {
+              onClose();
+              setValue(1);
+              onMenuItemClick(e, i);
+            }}
+            component={Link}
+            to={option.link}
+            selected={i === selectedIndex && value === 1}
           >
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
+            {option.name}
+          </MyMenuItem>
+        );
+      })}
+    </MyMenu>
   );
 }
+
+export default ServicesMenu;
