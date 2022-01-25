@@ -1,11 +1,15 @@
 import { CssBaseline } from "@mui/material";
-import Header from "./Header";
+import { ThemeProvider } from "@mui/material/styles";
+import myTheme from "./ui/Theme";
+import Header from "./ui/Header";
 
 function App() {
   return (
     <>
-      <CssBaseline />
-      <Header /> Hello
+      <ThemeProvider theme={myTheme}>
+        <CssBaseline />
+        <Header /> Hellooooo
+      </ThemeProvider>
     </>
   );
 }
