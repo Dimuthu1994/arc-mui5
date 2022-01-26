@@ -31,7 +31,7 @@ function Header(props) {
             <MyLogo alt="company logo" src={logo} />
           </Button>
           {matches ? (
-            <MyDrawer />
+            <MyDrawer value={value} setValue={setValue} />
           ) : (
             <ToolbarItems
               value={value}

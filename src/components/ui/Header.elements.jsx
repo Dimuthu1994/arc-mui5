@@ -1,4 +1,11 @@
-import { Tab, Button, Menu, MenuItem } from "@mui/material";
+import {
+  Tab,
+  Button,
+  Menu,
+  MenuItem,
+  SwipeableDrawer,
+  ListItemButton,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { IconButton } from "@mui/material";
 //All variations
@@ -55,3 +62,26 @@ export const MyDrawerIconContainer = styled(IconButton)(({ theme }) => ({
     backgroundColor: "transparent",
   },
 }));
+
+export const MySwipeableDrawer = styled(SwipeableDrawer)(({ theme }) => ({
+  "& .MuiDrawer-paper": {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
+  },
+}));
+
+export const MyListItemButton = styled(ListItemButton)(
+  ({ theme, estimate }) => ({
+    "&.Mui-selected": {
+      backgroundColor: estimate
+        ? theme.palette.secondary.dark
+        : theme.palette.primary.dark,
+    },
+
+    "&:hover": {
+      backgroundColor: estimate
+        ? theme.palette.secondary.light
+        : theme.palette.primary.light,
+    },
+  })
+);

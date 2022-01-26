@@ -39,6 +39,12 @@ export const myTheme = createTheme({
     width: "100%",
     backgroundColor: `${arcBlue}`,
   },
+  drawer: {
+    backgroundColor: `${arcBlue}`,
+  },
+  drawerItemEstimate: {
+    backgroundColor: `${arcOrange}`,
+  },
 });
 
 export default myTheme;

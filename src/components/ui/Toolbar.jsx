@@ -2,6 +2,7 @@ import { Tabs } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { EstimateButton, MyTab } from "./Header.elements";
+import useRefreshTabs from "./Hooks/useRefreshTabs";
 
 import ServicesMenu from "./ServicesMenu";
 
@@ -25,31 +26,21 @@ function ToolbarItems({ value, setValue, onChange }) {
     setSelectedIndex(i);
   };
 
-  useEffect(() => {
-    if (window.location.pathname === "/" && value !== 0) {
-      setValue(0);
-    } else if (window.location.pathname === "/services" && value !== 1) {
-      setValue(1);
-      setSelectedIndex(0);
-    } else if (window.location.pathname === "/revolution" && value !== 2) {
-      setValue(2);
-    } else if (window.location.pathname === "/about" && value !== 3) {
-      setValue(3);
-    } else if (window.location.pathname === "/contacts" && value !== 4) {
-      setValue(4);
-    } else if (window.location.pathname === "/estimate" && value !== 5) {
-      setValue(5);
-    } else if (window.location.pathname === "/customSoftware" && value !== 1) {
-      setValue(1);
-      setSelectedIndex(1);
-    } else if (window.location.pathname === "/mobileapps" && value !== 1) {
-      setValue(1);
-      setSelectedIndex(2);
-    } else if (window.location.pathname === "/websites" && value !== 1) {
-      setValue(1);
-      setSelectedIndex(3);
-    }
-  }, [value]);
+  useRefreshTabs(value, setValue, setSelectedIndex);
+
+  const tabRoutes = [
+    { name: "Home", link: "/" },
+    {
+      name: "Services",
+      link: "/services",
+      ariaOwns: anchorEl ? "simple-menu" : undefined,
+      ariaPopup: anchorEl ? "true" : undefined,
+      mouseOver: (e) => handleClick(e),
+    },
+    { name: "The Revolution", link: "/revolution" },
+    { name: "About Us", link: "/about" },
+    { name: "Contacts Us", link: "/contacts" },
+  ];
 
   return (
     <>
@@ -59,18 +50,17 @@ function ToolbarItems({ value, setValue, onChange }) {
         onChange={onChange}
         textColor="inherit"
       >
-        <MyTab component={Link} to="/" label="Home" />
-        <MyTab
-          component={Link}
-          to="/services"
-          label="Services"
-          aria-owns={anchorEl ? "simple-menu" : undefined}
-          aria-haspopup={anchorEl ? "true" : undefined}
-          onMouseOver={(e) => handleClick(e)}
-        />
-        <MyTab component={Link} to="/revolution" label="The Revolution" />
-        <MyTab component={Link} to="/about" label="About Us" />
-        <MyTab component={Link} to="/contacts" label="Contact Us" />
+        {tabRoutes.map((tab, i) => (
+          <MyTab
+            key={`${tab}${i}`}
+            component={Link}
+            to={tab.link}
+            label={tab.name}
+            aria-owns={tab.ariaOwns}
+            aria-haspopup={tab.ariaPopup}
+            onMouseOver={tab.mouseOver}
+          />
+        ))}
       </Tabs>
       <EstimateButton variant="contained" component={Link} to="/estimate">
         Free Estimate

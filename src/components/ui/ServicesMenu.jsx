@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MyMenu, MyMenuItem } from "./Header.elements";
-
+import { menuOptions } from "./Arrays";
 function ServicesMenu({
   anchorEl,
   open,
@@ -11,13 +11,6 @@ function ServicesMenu({
   selectedIndex,
   value,
 }) {
-  const menuOptions = [
-    { name: "Services", link: "/services" },
-    { name: "Custom Software Development", link: "/customSoftware" },
-    { name: "Mobile App Development", link: "/mobileapps" },
-    { name: "Website Development", link: "/websites" },
-  ];
-
   return (
     <MyMenu
       id="simple-menu"
