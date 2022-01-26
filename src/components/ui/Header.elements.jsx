@@ -1,6 +1,6 @@
 import { Tab, Button, Menu, MenuItem } from "@mui/material";
 import { styled } from "@mui/material/styles";
-
+import { IconButton } from "@mui/material";
 //All variations
 
 export const MyLogo = styled("img")(({ theme }) => ({
@@ -14,15 +14,15 @@ export const MyTab = styled(Tab)(({ theme }) => ({
   ...theme.typography.tab,
   color: "white",
   minWidth: 10,
-  marginLeft: "25px",
+  marginLeft: "20px",
 }));
 
 export const EstimateButton = styled(Button)(({ theme }) => ({
   ...theme.typography.estimateButton,
   backgroundColor: theme.palette.secondary.main,
   borderRadius: "50px",
-  marginLeft: "25px",
-  marginRight: "25px",
+  marginLeft: "20px",
+  marginRight: "20px",
   whiteSpace: "nowrap",
 }));
 
@@ -44,5 +44,14 @@ export const MyMenuItem = styled(MenuItem)(({ theme }) => ({
 
   "&.Mui-selected": {
     backgroundColor: theme.palette.primary.dark,
+  },
+}));
+
+export const MyDrawerIconContainer = styled(IconButton)(({ theme }) => ({
+  color: theme.palette.common.white,
+  marginLeft: "auto",
+  marginRight: "5px",
+  "&:hover": {
+    backgroundColor: "transparent",
   },
 }));

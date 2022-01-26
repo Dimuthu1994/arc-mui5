@@ -6,9 +6,11 @@ import { useMediaQuery } from "@mui/material";
 import logo from "../../assets/logo.svg";
 import { MyLogo } from "./Header.elements";
 import { Link } from "react-router-dom";
+import MyDrawer from "./Drawer";
 
 function Header(props) {
   const [value, setValue] = useState(0);
+
   //tabs
   const handleChange = (e, value) => {
     setValue(value);
@@ -28,7 +30,9 @@ function Header(props) {
           >
             <MyLogo alt="company logo" src={logo} />
           </Button>
-          {matches ? null : (
+          {matches ? (
+            <MyDrawer />
+          ) : (
             <ToolbarItems
               value={value}
               setValue={setValue}
