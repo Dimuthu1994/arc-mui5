@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { MyDrawerIconContainer, MySwipeableDrawer } from "./Header.elements";
+import {
+  MyBox,
+  MyDrawerIconContainer,
+  MySwipeableDrawer,
+} from "./Header.elements";
 import MyDrawerList from "./MyDrawerList";
 
 function MyDrawer({ value, setValue }) {
@@ -18,6 +22,7 @@ function MyDrawer({ value, setValue }) {
         onClose={() => setOpenDrawer(false)}
         onOpen={() => setOpenDrawer(true)}
       >
+        <MyBox />
         <MyDrawerList
           setOpenDrawer={setOpenDrawer}
           value={value}

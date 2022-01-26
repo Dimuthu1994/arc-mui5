@@ -5,6 +5,7 @@ import {
   MenuItem,
   SwipeableDrawer,
   ListItemButton,
+  Box,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { IconButton } from "@mui/material";
@@ -85,3 +86,10 @@ export const MyListItemButton = styled(ListItemButton)(
     },
   })
 );
+
+export const MyBox = styled(Box)(({ theme }) => ({
+  marginTop: "56px",
+  [theme.breakpoints.up("sm")]: {
+    marginTop: "64px",
+  },
+}));
