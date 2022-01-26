@@ -1,36 +1,41 @@
 import React, { useState } from "react";
-import { AppBar, useScrollTrigger } from "@mui/material";
-import ToolbarHeader from "./Toolbar";
-
-function ElevationScroll(props) {
-  const { children } = props;
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
+import { AppBar, Button, Toolbar } from "@mui/material";
+import ToolbarItems from "./Toolbar";
+import { ElevationScroll } from "./ElevationScroll";
+import { useMediaQuery } from "@mui/material";
+import logo from "../../assets/logo.svg";
+import { MyLogo } from "./Header.elements";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   const [value, setValue] = useState(0);
-
   //tabs
   const handleChange = (e, value) => {
     setValue(value);
   };
+  const matches = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   return (
     <ElevationScroll>
       <AppBar position="sticky">
-        <ToolbarHeader
-          value={value}
-          setValue={setValue}
-          onChange={handleChange}
-        />
+        <Toolbar disableGutters>
+          <Button
+            component={Link}
+            to="/"
+            sx={{ padding: 0 }}
+            disableRipple
+            onClick={() => setValue(0)}
+          >
+            <MyLogo alt="company logo" src={logo} />
+          </Button>
+          {matches ? null : (
+            <ToolbarItems
+              value={value}
+              setValue={setValue}
+              onChange={handleChange}
+            />
+          )}
+        </Toolbar>
       </AppBar>
     </ElevationScroll>
   );

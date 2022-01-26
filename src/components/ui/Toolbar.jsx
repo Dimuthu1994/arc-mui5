@@ -1,11 +1,11 @@
-import { Button, Tabs, Toolbar } from "@mui/material";
+import { Tabs } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { EstimateButton, MyLogo, MyTab } from "./Header.elements";
-import logo from "../../assets/logo.svg";
+import { EstimateButton, MyTab } from "./Header.elements";
+
 import ServicesMenu from "./ServicesMenu";
 
-function ToolbarHeader({ value, setValue, onChange }) {
+function ToolbarItems({ value, setValue, onChange }) {
   //   Menu
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -52,16 +52,7 @@ function ToolbarHeader({ value, setValue, onChange }) {
   }, [value]);
 
   return (
-    <Toolbar disableGutters>
-      <Button
-        component={Link}
-        to="/"
-        sx={{ padding: 0 }}
-        disableRipple
-        onClick={() => setValue(0)}
-      >
-        <MyLogo alt="company logo" src={logo} />
-      </Button>
+    <>
       <Tabs
         sx={(theme) => ({ ...theme.tabContainer })}
         value={value}
@@ -81,7 +72,9 @@ function ToolbarHeader({ value, setValue, onChange }) {
         <MyTab component={Link} to="/about" label="About Us" />
         <MyTab component={Link} to="/contacts" label="Contact Us" />
       </Tabs>
-      <EstimateButton variant="contained">Free Estimate</EstimateButton>
+      <EstimateButton variant="contained" component={Link} to="/estimate">
+        Free Estimate
+      </EstimateButton>
       {/* Menu */}
       <ServicesMenu
         anchorEl={anchorEl}
@@ -92,8 +85,8 @@ function ToolbarHeader({ value, setValue, onChange }) {
         selectedIndex={selectedIndex}
         value={value}
       />
-    </Toolbar>
+    </>
   );
 }
 
-export default ToolbarHeader;
+export default ToolbarItems;
