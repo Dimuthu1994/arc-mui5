@@ -30,6 +30,13 @@ export const myTheme = createTheme(theme, {
       fontSize: "0.8rem",
       textTransform: "none",
     },
+    grid: {
+      color: "white",
+      fontFamily: "Arial",
+      fontSize: "0.75rem",
+      fontWeight: "bold",
+      textDecoration: "none",
+    },
   },
 
   tabContainer: {

@@ -36,8 +36,8 @@ function App() {
             <Route path="/contacts" component={() => <div>Contacts Us</div>} />
             <Route path="/estimate" component={() => <div>Estimate</div>} />
           </Switch>
+          <Footer />
         </BrowserRouter>
-        <Footer />
       </ThemeProvider>
     </>
   );
