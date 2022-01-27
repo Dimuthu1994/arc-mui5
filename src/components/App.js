@@ -13,7 +13,11 @@ function App() {
           <CssBaseline />
           <Header />
           <Switch>
-            <Route exact path="/" component={() => <div>Home</div>} />
+            <Route
+              exact
+              path="/"
+              component={() => <div style={{ height: "2000px" }}>Home</div>}
+            />
             <Route path="/services" component={() => <div>Services</div>} />
             <Route
               path="/customSoftware"

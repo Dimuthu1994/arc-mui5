@@ -1,10 +1,13 @@
 import React from "react";
-import { MyFooter } from "./Footer.elements";
+import { MyAdornment, MyFooter } from "./Footer.elements";
+import footerAdornment from "../../assets/Footer Adornment.svg";
 
 function Footer(props) {
   return (
     <>
-      <MyFooter>Example Footer</MyFooter>
+      <MyFooter>
+        <MyAdornment src={footerAdornment} alt="black decoration" />
+      </MyFooter>
     </>
   );
 }

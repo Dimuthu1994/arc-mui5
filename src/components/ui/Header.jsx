@@ -19,10 +19,7 @@ function Header(props) {
 
   return (
     <ElevationScroll>
-      <AppBar
-        position="sticky"
-        sx={(theme) => ({ zIndex: theme.zIndex.modal + 1 })}
-      >
+      <AppBar position="sticky" sx={(theme) => ({ ...theme.appbar })}>
         <Toolbar disableGutters>
           <Button
             component={Link}

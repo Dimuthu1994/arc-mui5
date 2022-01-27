@@ -2,7 +2,8 @@ import { createTheme } from "@mui/material/styles";
 
 const arcBlue = "#0B72B9";
 const arcOrange = "#FFBA60";
-export const myTheme = createTheme({
+let theme = createTheme();
+export const myTheme = createTheme(theme, {
   palette: {
     common: {
       blue: `${arcBlue}`,
@@ -38,12 +39,17 @@ export const myTheme = createTheme({
   footer: {
     width: "100%",
     backgroundColor: `${arcBlue}`,
+    zIndex: 1302,
+    position: "relative",
   },
   drawer: {
     backgroundColor: `${arcBlue}`,
   },
   drawerItemEstimate: {
     backgroundColor: `${arcOrange}`,
+  },
+  appbar: {
+    zIndex: [theme.zIndex.modal + 1],
   },
 });
 
