@@ -58,6 +58,15 @@ export const myTheme = createTheme(theme, {
   appbar: {
     zIndex: [theme.zIndex.modal + 1],
   },
+  footerIcons: {
+    height: "3em",
+    width: "3em",
+
+    [theme.breakpoints.down("sm")]: {
+      width: "2em",
+      height: "2em",
+    },
+  },
 });
 
 export default myTheme;

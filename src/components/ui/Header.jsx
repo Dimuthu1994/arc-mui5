@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AppBar, Button, Toolbar } from "@mui/material";
-import ToolbarItems from "./Toolbar";
+import ToolbarItems from "./ToolbarItems";
 import { ElevationScroll } from "./ElevationScroll";
 import { useMediaQuery } from "@mui/material";
 import logo from "../../assets/logo.svg";
@@ -8,9 +8,7 @@ import { MyLogo } from "./Header.elements";
 import { Link } from "react-router-dom";
 import MyDrawer from "./Drawer";
 
-function Header(props) {
-  const [value, setValue] = useState(0);
-
+function Header({ value, setValue, selectedIndex, setSelectedIndex }) {
   //tabs
   const handleChange = (e, value) => {
     setValue(value);
@@ -36,6 +34,8 @@ function Header(props) {
             <ToolbarItems
               value={value}
               setValue={setValue}
+              selectedIndex={selectedIndex}
+              setSelectedIndex={setSelectedIndex}
               onChange={handleChange}
             />
           )}

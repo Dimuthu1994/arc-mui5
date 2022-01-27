@@ -4,14 +4,22 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import myTheme from "./ui/Theme";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
+import { useState } from "react";
 
 function App() {
+  const [value, setValue] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <>
       <ThemeProvider theme={myTheme}>
         <BrowserRouter>
           <CssBaseline />
-          <Header />
+          <Header
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
           <Switch>
             <Route
               exact
@@ -36,7 +44,7 @@ function App() {
             <Route path="/contacts" component={() => <div>Contacts Us</div>} />
             <Route path="/estimate" component={() => <div>Estimate</div>} />
           </Switch>
-          <Footer />
+          <Footer setValue={setValue} setSelectedIndex={setSelectedIndex} />
         </BrowserRouter>
       </ThemeProvider>
     </>

@@ -6,10 +6,16 @@ import useRefreshTabs from "./Hooks/useRefreshTabs";
 
 import ServicesMenu from "./ServicesMenu";
 
-function ToolbarItems({ value, setValue, onChange }) {
+function ToolbarItems({
+  value,
+  setValue,
+  onChange,
+  selectedIndex,
+  setSelectedIndex,
+}) {
   //   Menu
   const [anchorEl, setAnchorEl] = useState(null);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+
   const open = Boolean(anchorEl);
 
   const handleClick = (e) => {
