@@ -3,6 +3,11 @@ import { useLottie } from "lottie-react";
 import animationData from "../../animations/landinganimation/data";
 import { Button, Grid, Typography } from "@mui/material";
 import ButtonArrow from "../ui/5.1 ButtonArrow";
+import {
+  EstimateButton,
+  LearnButtonHero,
+  MainContainer,
+} from "./HeroBlock.elements";
 
 function HeroBlock(props) {
   const options = {
@@ -15,23 +20,29 @@ function HeroBlock(props) {
   };
   const { View } = useLottie(options);
   return (
-    <Grid container direction="column">
+    <MainContainer container direction="column">
       <Grid item>
         <Grid container justifyContent="flex-end" alignItems="center">
-          <Grid item sm>
+          <Grid item sm sx={(theme) => ({ ...theme.heroTextContainer })}>
             <Typography variant="h2" align="center">
               Bringing West Cost Technology
               <br />
               to the midwest
             </Typography>
-            <Grid container>
+            <Grid
+              container
+              justifyContent="center"
+              sx={(theme) => ({ ...theme.buttonContainer })}
+            >
               <Grid item>
-                <Button variant="contained">Free Estimate</Button>
+                <EstimateButton variant="contained">
+                  Free Estimate
+                </EstimateButton>
               </Grid>
               <Grid item>
-                <Button variant="outlined">
+                <LearnButtonHero variant="outlined">
                   Learn More <ButtonArrow width={15} height={15} fill="red" />
-                </Button>
+                </LearnButtonHero>
               </Grid>
             </Grid>
           </Grid>
@@ -40,7 +51,7 @@ function HeroBlock(props) {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </MainContainer>
   );
 }
 

@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 const arcBlue = "#0B72B9";
-const arcOrange = "#FFBA60";
+const arcOrange = "#ffba60";
 let theme = createTheme();
 export const myTheme = createTheme(theme, {
   palette: {
@@ -15,6 +15,7 @@ export const myTheme = createTheme(theme, {
     },
     secondary: {
       main: `${arcOrange}`,
+      light: "#ffc77f",
     },
   },
 
@@ -80,6 +81,21 @@ export const myTheme = createTheme(theme, {
     minWidth: "21em",
     marginTop: "2em",
     marginLeft: "10%",
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "30em",
+    },
+  },
+
+  buttonContainer: {
+    marginTop: "1em",
+  },
+
+  heroTextContainer: {
+    minWidth: "21.5em",
+    marginLeft: "1em",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+    },
   },
 });
 
