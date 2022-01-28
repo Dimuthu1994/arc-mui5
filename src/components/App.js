@@ -1,6 +1,7 @@
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
 import myTheme from "./ui/Theme";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
@@ -21,11 +22,7 @@ function App() {
             setSelectedIndex={setSelectedIndex}
           />
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => <div style={{ height: "2000px" }}>Home</div>}
-            />
+            <Route exact path="/" component={LandingPage} />
             <Route path="/services" component={() => <div>Services</div>} />
             <Route
               path="/customSoftware"

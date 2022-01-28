@@ -37,6 +37,13 @@ export const myTheme = createTheme(theme, {
       fontWeight: "bold",
       textDecoration: "none",
     },
+    h2: {
+      fontFamily: "Raleway",
+      color: `${arcBlue}`,
+      fontWeight: "700",
+      fontSize: "2.5rem",
+      lineHeight: "1.5",
+    },
   },
 
   tabContainer: {
@@ -66,6 +73,13 @@ export const myTheme = createTheme(theme, {
       width: "2em",
       height: "2em",
     },
+  },
+
+  animation: {
+    maxWidth: "50em",
+    minWidth: "21em",
+    marginTop: "2em",
+    marginLeft: "10%",
   },
 });
 
