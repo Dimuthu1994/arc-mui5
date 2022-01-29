@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import revolutionBackground from "../../assets/repeatingBackground.svg";
 
 const arcBlue = "#0B72B9";
 const arcOrange = "#ffba60";
@@ -144,6 +145,22 @@ export const myTheme = createTheme(theme, {
     [theme.breakpoints.down("sm")]: {
       padding: "25px",
     },
+  },
+
+  revolutionBackground: {
+    backgroundImage: `url(${revolutionBackground})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100%",
+    width: "100%",
+  },
+
+  revolutionCard: {
+    position: "absolute",
+    boxShadow: theme.shadows[10],
+    borderRadius: 15,
+    padding: "7em",
   },
 });
 
