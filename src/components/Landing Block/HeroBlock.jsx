@@ -4,8 +4,9 @@ import animationData from "../../animations/landinganimation/data";
 import { Grid, Typography } from "@mui/material";
 import ButtonArrow from "../ui/5.1 ButtonArrow";
 import { EstimateButton, LearnButtonHero } from "./HeroBlock.elements";
+import { Link } from "react-router-dom";
 
-function HeroBlock(props) {
+function HeroBlock({ setValue }) {
   const options = {
     loop: true,
     autoplay: true,
@@ -30,10 +31,22 @@ function HeroBlock(props) {
             sx={(theme) => ({ ...theme.buttonContainer })}
           >
             <Grid item>
-              <EstimateButton variant="contained">Free Estimate</EstimateButton>
+              <EstimateButton
+                variant="contained"
+                component={Link}
+                to="/estimate"
+                onClick={() => setValue(5)}
+              >
+                Free Estimate
+              </EstimateButton>
             </Grid>
             <Grid item>
-              <LearnButtonHero variant="outlined">
+              <LearnButtonHero
+                variant="outlined"
+                component={Link}
+                to="/revolution"
+                onClick={() => setValue(2)}
+              >
                 Learn More <ButtonArrow width={15} height={15} fill="red" />
               </LearnButtonHero>
             </Grid>

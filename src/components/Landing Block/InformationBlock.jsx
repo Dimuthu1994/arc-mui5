@@ -1,9 +1,10 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import ButtonArrow from "../ui/5.1 ButtonArrow";
 import { LearnButtonServices } from "./HeroBlock.elements";
 
-function InformationBlock(props) {
+function InformationBlock({ setValue }) {
   const matches = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const matchesXS = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
@@ -38,6 +39,11 @@ function InformationBlock(props) {
                 <LearnButtonServices
                   variant="outlined"
                   sx={{ color: "white", borderColor: "white" }}
+                  component={Link}
+                  to="/contacts"
+                  onClick={() => {
+                    setValue(4);
+                  }}
                 >
                   <span style={{ marginRight: 10 }}></span>Learn More
                   <ButtonArrow width={15} height={15} fill="white" />
@@ -63,6 +69,11 @@ function InformationBlock(props) {
                 <LearnButtonServices
                   variant="outlined"
                   sx={{ color: "white", borderColor: "white" }}
+                  component={Link}
+                  to="/about"
+                  onClick={() => {
+                    setValue(3);
+                  }}
                 >
                   <span style={{ marginRight: 10 }}></span>Learn More
                   <ButtonArrow width={15} height={15} fill="white" />

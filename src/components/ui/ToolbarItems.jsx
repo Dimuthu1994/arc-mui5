@@ -68,7 +68,12 @@ function ToolbarItems({
           />
         ))}
       </Tabs>
-      <EstimateButton variant="contained" component={Link} to="/estimate">
+      <EstimateButton
+        variant="contained"
+        component={Link}
+        to="/estimate"
+        onClick={() => setValue(5)}
+      >
         Free Estimate
       </EstimateButton>
       {/* Menu */}

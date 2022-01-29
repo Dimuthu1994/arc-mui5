@@ -22,7 +22,17 @@ function App() {
             setSelectedIndex={setSelectedIndex}
           />
           <Switch>
-            <Route exact path="/" component={LandingPage} />
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <LandingPage
+                  {...props}
+                  setValue={setValue}
+                  setSelectedIndex={setSelectedIndex}
+                />
+              )}
+            />
             <Route path="/services" component={() => <div>Services</div>} />
             <Route
               path="/customSoftware"

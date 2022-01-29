@@ -1,7 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 import revolutionBackground from "../../assets/repeatingBackground.svg";
 import infoBackground from "../../assets/infoBackground.svg";
-
+import background from "../../assets/background.jpg";
+import mobileBackground from "../../assets/mobileBackground.jpg";
 const arcBlue = "#0B72B9";
 const arcOrange = "#ffba60";
 const arcGrey = "#868686";
@@ -192,6 +193,20 @@ export const myTheme = createTheme(theme, {
     backgroundRepeat: "no-repeat",
     height: "100%",
     width: "100%",
+  },
+
+  background: {
+    backgroundAttachment: "fixed",
+    backgroundImage: `url(${background})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "60em",
+    width: "100%",
+    [theme.breakpoints.down("md")]: {
+      backgroundImage: `url(${mobileBackground})`,
+      backgroundAttachment: "inherit",
+    },
   },
 });
 

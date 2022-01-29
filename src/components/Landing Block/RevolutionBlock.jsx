@@ -4,8 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import { Box, Grid, Typography } from "@mui/material";
 import { LearnButtonServices } from "./HeroBlock.elements";
 import ButtonArrow from "../ui/5.1 ButtonArrow";
+import { Link } from "react-router-dom";
 
-function RevolutionBlock(props) {
+function RevolutionBlock({ setValue }) {
   return (
     <Grid item>
       <Grid
@@ -29,7 +30,14 @@ function RevolutionBlock(props) {
                   Visionary insights coupled with cutting-edge technology is a
                   recipe for revolution
                 </Typography>
-                <LearnButtonServices variant="outlined">
+                <LearnButtonServices
+                  variant="outlined"
+                  component={Link}
+                  to="/revolution"
+                  onClick={() => {
+                    setValue(2);
+                  }}
+                >
                   <span style={{ marginRight: 10 }}></span>Learn More
                   <ButtonArrow width={15} height={15} fill="red" />
                 </LearnButtonServices>

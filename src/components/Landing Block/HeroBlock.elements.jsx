@@ -38,11 +38,25 @@ export const LearnButtonServices = styled(Button)(({ theme }) => ({
   whiteSpace: "nowrap",
   height: 35,
   padding: 5,
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     marginBottom: "2em",
   },
 }));
 
 export const IconServices = styled("img")(({ theme }) => ({
   ...theme.iconService,
+}));
+
+export const EstimateButtonCall = styled(EstimateButton)(({ theme }) => ({
+  height: 80,
+  width: 205,
+  fontSize: "1.5rem",
+  color: "white",
+  marginRight: "4em",
+  marginLeft: "2em",
+
+  [theme.breakpoints.down("md")]: {
+    marginLeft: 0,
+    marginRight: 0,
+  },
 }));

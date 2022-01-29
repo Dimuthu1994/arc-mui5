@@ -6,8 +6,9 @@ import mobileAppsIcon from "../../assets/mobileIcon.svg";
 import websitesIcon from "../../assets/websiteIcon.svg";
 import { IconServices, LearnButtonServices } from "./HeroBlock.elements";
 import { useMediaQuery } from "@mui/material";
+import { Link } from "react-router-dom";
 
-function ServicesBlock(props) {
+function ServicesBlock({ setValue, setSelectedIndex }) {
   const matches = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   return (
@@ -35,7 +36,15 @@ function ServicesBlock(props) {
               celebration
             </span>
           </Typography>
-          <LearnButtonServices variant="outlined">
+          <LearnButtonServices
+            variant="outlined"
+            component={Link}
+            to="/customSoftware"
+            onClick={() => {
+              setValue(1);
+              setSelectedIndex(1);
+            }}
+          >
             <span style={{ marginRight: 10 }}></span>Learn More
             <ButtonArrow width={15} height={15} fill="red" />
           </LearnButtonServices>
@@ -65,7 +74,15 @@ function ServicesBlock(props) {
             Increase your web experiance or create a standalone app
             {matches ? null : <br />} with either mobile platform.
           </Typography>
-          <LearnButtonServices variant="outlined">
+          <LearnButtonServices
+            variant="outlined"
+            component={Link}
+            to="/mobileapps"
+            onClick={() => {
+              setValue(1);
+              setSelectedIndex(2);
+            }}
+          >
             <span style={{ marginRight: 10 }}></span>Learn More
             <ButtonArrow width={15} height={15} fill="red" />
           </LearnButtonServices>
@@ -101,7 +118,15 @@ function ServicesBlock(props) {
           <Typography variant="subtitle1">
             Optimize for Search Engines built for speed.
           </Typography>
-          <LearnButtonServices variant="outlined">
+          <LearnButtonServices
+            variant="outlined"
+            component={Link}
+            to="/websites"
+            onClick={() => {
+              setValue(1);
+              setSelectedIndex(3);
+            }}
+          >
             <span style={{ marginRight: 10 }}></span>Learn More
             <ButtonArrow width={15} height={15} fill="red" />
           </LearnButtonServices>
