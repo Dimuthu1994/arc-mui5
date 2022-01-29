@@ -46,6 +46,11 @@ export const myTheme = createTheme(theme, {
       color: `${arcBlue}`,
       fontWeight: "700",
       fontSize: "2.5rem",
+    },
+    h3: {
+      fontFamily: "Pacifico",
+      color: `${arcBlue}`,
+      fontSize: "2.5rem",
       lineHeight: "1.5",
     },
 
@@ -159,8 +164,18 @@ export const myTheme = createTheme(theme, {
   revolutionCard: {
     position: "absolute",
     boxShadow: theme.shadows[10],
-    borderRadius: 15,
+    borderRadius: 8,
     padding: "7em",
+    paddingLeft: "3em",
+    paddingRight: "3em",
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "7em",
+      paddingBottom: "7em",
+      paddingLeft: 0,
+      paddingRight: 0,
+      borderRadius: 0,
+      width: "100%",
+    },
   },
 });
 

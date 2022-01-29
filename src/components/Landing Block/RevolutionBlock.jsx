@@ -1,10 +1,6 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import { Box, Grid, Typography } from "@mui/material";
 import { LearnButtonServices } from "./HeroBlock.elements";
 import ButtonArrow from "../ui/5.1 ButtonArrow";
@@ -16,14 +12,16 @@ function RevolutionBlock(props) {
         container
         alignItems="center"
         justifyContent="center"
-        sx={{ height: "100em" }}
+        sx={{ height: "100em", marginTop: "10em" }}
       >
         <Card sx={(theme) => ({ ...theme.revolutionCard })}>
           <CardContent>
             <Grid container direction="column" sx={{ textAlign: "center" }}>
               <Grid item>
                 {" "}
-                <Typography variant="h3">The Revolution</Typography>
+                <Typography variant="h3" gutterBottom>
+                  The Revolution
+                </Typography>
               </Grid>
               <Grid item>
                 {" "}
