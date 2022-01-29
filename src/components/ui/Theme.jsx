@@ -2,6 +2,8 @@ import { createTheme } from "@mui/material/styles";
 
 const arcBlue = "#0B72B9";
 const arcOrange = "#ffba60";
+const arcGrey = "#868686";
+
 let theme = createTheme();
 export const myTheme = createTheme(theme, {
   palette: {
@@ -44,6 +46,34 @@ export const myTheme = createTheme(theme, {
       fontWeight: "700",
       fontSize: "2.5rem",
       lineHeight: "1.5",
+    },
+
+    h4: {
+      fontFamily: "Raleway",
+      color: `${arcBlue}`,
+      fontWeight: "700",
+      fontSize: "1.7rem",
+    },
+
+    subtitle1: {
+      color: `${arcGrey}`,
+      fontWeight: "300",
+      fontSize: "1.25rem",
+    },
+
+    specialText: {
+      fontFamily: "Pacifico",
+      color: `${arcOrange}`,
+    },
+
+    learnButton: {
+      borderColor: theme.palette.common.blue,
+      color: theme.palette.common.blue,
+      borderWidth: 2,
+      textTransform: "none",
+      borderRadius: "50px",
+      fontFamily: "Roboto",
+      fontWeight: "bold",
     },
   },
 
@@ -95,6 +125,24 @@ export const myTheme = createTheme(theme, {
     marginLeft: "1em",
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
+    },
+  },
+
+  subtitle: {
+    marginBottom: "1em",
+  },
+
+  iconService: {
+    marginLeft: "2em",
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: 0,
+    },
+  },
+
+  serviceContainer: {
+    marginTop: "12em",
+    [theme.breakpoints.down("sm")]: {
+      padding: "25px",
     },
   },
 });

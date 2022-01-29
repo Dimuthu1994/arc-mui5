@@ -15,13 +15,7 @@ export const EstimateButton = styled(Button)(({ theme }) => ({
 }));
 
 export const LearnButtonHero = styled(Button)(({ theme }) => ({
-  borderColor: theme.palette.common.blue,
-  color: theme.palette.common.blue,
-  borderRadius: "50px",
-  borderWidth: 2,
-  textTransform: "none",
-  fontFamily: "Roboto",
-  fontWeight: "bold",
+  ...theme.typography.learnButton,
   fontSize: "0.9rem",
   whiteSpace: "nowrap",
   height: 45,
@@ -36,4 +30,19 @@ export const MainContainer = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {
     marginTop: "2em",
   },
+}));
+
+export const LearnButtonServices = styled(Button)(({ theme }) => ({
+  ...theme.typography.learnButton,
+  fontSize: "0.7rem",
+  whiteSpace: "nowrap",
+  height: 35,
+  padding: 5,
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "2em",
+  },
+}));
+
+export const IconServices = styled("img")(({ theme }) => ({
+  ...theme.iconService,
 }));
