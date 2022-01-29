@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import revolutionBackground from "../../assets/repeatingBackground.svg";
+import infoBackground from "../../assets/infoBackground.svg";
 
 const arcBlue = "#0B72B9";
 const arcOrange = "#ffba60";
@@ -63,6 +64,12 @@ export const myTheme = createTheme(theme, {
 
     subtitle1: {
       color: `${arcGrey}`,
+      fontWeight: "300",
+      fontSize: "1.25rem",
+    },
+
+    subtitle2: {
+      color: "white",
       fontWeight: "300",
       fontSize: "1.25rem",
     },
@@ -176,6 +183,15 @@ export const myTheme = createTheme(theme, {
       borderRadius: 0,
       width: "100%",
     },
+  },
+
+  infoBackground: {
+    backgroundImage: `url(${infoBackground})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100%",
+    width: "100%",
   },
 });
 
