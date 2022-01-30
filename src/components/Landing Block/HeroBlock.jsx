@@ -35,7 +35,7 @@ function HeroBlock({ setValue }) {
                 variant="contained"
                 component={Link}
                 to="/estimate"
-                onClick={() => setValue(5)}
+                onClick={() => setValue(false)}
               >
                 Free Estimate
               </EstimateButton>

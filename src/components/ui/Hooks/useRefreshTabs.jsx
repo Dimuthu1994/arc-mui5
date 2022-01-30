@@ -13,8 +13,8 @@ function useRefreshTabs(value, setValue, setSelectedIndex) {
       setValue(3);
     } else if (window.location.pathname === "/contacts" && value !== 4) {
       setValue(4);
-    } else if (window.location.pathname === "/estimate" && value !== 5) {
-      setValue(5);
+    } else if (window.location.pathname === "/estimate" && value !== false) {
+      setValue(false);
     } else if (window.location.pathname === "/customSoftware" && value !== 1) {
       setValue(1);
       setSelectedIndex(1);

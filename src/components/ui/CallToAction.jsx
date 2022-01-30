@@ -53,7 +53,7 @@ function CallToAction({ setValue }) {
           component={Link}
           to="/estimate"
           onClick={() => {
-            setValue(5);
+            setValue(false);
           }}
         >
           Free Estimate
