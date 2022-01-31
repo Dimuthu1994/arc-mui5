@@ -13,6 +13,7 @@ export const myTheme = createTheme(theme, {
     common: {
       blue: `${arcBlue}`,
       orange: `${arcOrange}`,
+      grey: `${arcGrey}`,
     },
 
     primary: {
@@ -71,6 +72,12 @@ export const myTheme = createTheme(theme, {
 
     subtitle2: {
       color: "white",
+      fontWeight: "300",
+      fontSize: "1.25rem",
+    },
+
+    body1: {
+      // color: `${arcGrey}`,
       fontWeight: "300",
       fontSize: "1.25rem",
     },
@@ -207,6 +214,21 @@ export const myTheme = createTheme(theme, {
       backgroundImage: `url(${mobileBackground})`,
       backgroundAttachment: "inherit",
     },
+  },
+
+  heading: {
+    maxWidth: "40em",
+  },
+
+  arrowContainer: {
+    marginTop: "0.5em",
+  },
+
+  customSoftwareContainer: {
+    paddingLeft: "5em",
+    paddingRight: "5em",
+    paddingTop: "2em",
+    paddingBottom: "10em",
   },
 });
 

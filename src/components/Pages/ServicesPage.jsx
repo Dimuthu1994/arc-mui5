@@ -1,22 +1,26 @@
-import { Grid, Typography } from "@mui/material";
-import React from "react";
-import ButtonArrow from "../ui/5.1 ButtonArrow";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
+import {
+  LearnButtonServices,
+  IconServices,
+} from "../Landing Block/HeroBlock.elements";
 import customSoftwareIcon from "../../assets/Custom Software Icon.svg";
 import mobileAppsIcon from "../../assets/mobileIcon.svg";
 import websitesIcon from "../../assets/websiteIcon.svg";
-import { IconServices, LearnButtonServices } from "./HeroBlock.elements";
-import { useMediaQuery } from "@mui/material";
+
+import ButtonArrow from "../ui/5.1 ButtonArrow";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function ServicesBlock({ setValue, setSelectedIndex }) {
+function ServicesPage({ setValue, setSelectedIndex }) {
   const matches = useMediaQuery((theme) => theme.breakpoints.down("md"));
-
   return (
-    <>
-      {/* custom software */}
+    <Grid container direction="column">
       <Grid
         container
-        sx={(theme) => ({ ...theme.serviceContainer })}
+        sx={(theme) => ({
+          ...theme.serviceContainer,
+          marginTop: matches ? "3em" : "5em",
+        })}
         justifyContent={matches ? "center" : undefined}
       >
         <Grid
@@ -57,7 +61,10 @@ function ServicesBlock({ setValue, setSelectedIndex }) {
       {/* mobile apps */}
       <Grid
         container
-        sx={(theme) => ({ ...theme.serviceContainer })}
+        sx={(theme) => ({
+          ...theme.serviceContainer,
+          marginTop: matches ? "3em" : "5em",
+        })}
         justifyContent={matches ? "center" : "flex-end"}
       >
         <Grid
@@ -101,6 +108,7 @@ function ServicesBlock({ setValue, setSelectedIndex }) {
         container
         sx={(theme) => ({
           ...theme.serviceContainer,
+          marginTop: matches ? "3em" : "5em",
         })}
         justifyContent={matches ? "center" : undefined}
       >
@@ -135,8 +143,8 @@ function ServicesBlock({ setValue, setSelectedIndex }) {
           <IconServices alt="webite icon" src={websitesIcon} />
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 }
 
-export default ServicesBlock;
+export default ServicesPage;

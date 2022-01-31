@@ -2,6 +2,8 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
+import ServicesPage from "./Pages/ServicesPage";
+import CustomSoftwarePage from "./Pages/CustomSoftwarePage";
 import myTheme from "./ui/Theme";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
@@ -33,10 +35,25 @@ function App() {
                 />
               )}
             />
-            <Route path="/services" component={() => <div>Services</div>} />
+            <Route
+              path="/services"
+              render={(props) => (
+                <ServicesPage
+                  {...props}
+                  setValue={setValue}
+                  setSelectedIndex={setSelectedIndex}
+                />
+              )}
+            />
             <Route
               path="/customSoftware"
-              component={() => <div>Custom Software</div>}
+              render={(props) => (
+                <CustomSoftwarePage
+                  {...props}
+                  setValue={setValue}
+                  setSelectedIndex={setSelectedIndex}
+                />
+              )}
             />
             <Route
               path="/mobileapps"
