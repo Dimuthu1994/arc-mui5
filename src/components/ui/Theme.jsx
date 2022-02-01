@@ -229,6 +229,15 @@ export const myTheme = createTheme(theme, {
     paddingRight: "5em",
     paddingTop: "2em",
     paddingBottom: "10em",
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "1.5em",
+      paddingRight: "1.5em",
+      paddingTop: "1em",
+    },
+  },
+
+  customSoftwareItemContainer: {
+    maxWidth: "40em",
   },
 });
 
